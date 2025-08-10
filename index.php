@@ -632,7 +632,7 @@ if (isset($_SESSION['showWinPopup'])) {
             bubble.classList.add('show');
 
             // Play voice if requested
-            if (playVoice) {
+            if (playVoice && audioFile) {
                 wizardAudio.currentTime = 0;
                 wizardAudio.play().catch(err => console.warn("Audio blocked:", err));
             }
