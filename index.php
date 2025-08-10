@@ -310,7 +310,7 @@ if (isset($_SESSION['showWinPopup'])) {
         <div class="chest-box">
             <canvas id="chestCanvas"></canvas>
         </div>
-        <div class="key-box">
+        <div class="key-box" id="keyBox">
             <img src="images/key.png" height="50px" id="key1" />
             <img src="images/key.png" height="50px" id="key2" />
         </div>
@@ -624,7 +624,7 @@ if (isset($_SESSION['showWinPopup'])) {
             const bubble = document.getElementById('wizardBubble');
             const key1 = document.getElementById('key1');
             const key2 = document.getElementById('key2');
-
+            const keyBox = document.getElementById('keyBox');
             // Set text
             bubble.innerHTML = text;
 
@@ -643,6 +643,11 @@ if (isset($_SESSION['showWinPopup'])) {
             } else if (audioFile === "fail.mp3") {
                 if (key1) key1.remove();
                 if (key2) key2.remove();
+                if (keyBox) keyBox.remove();
+            }else if (audioFile === "win.mp3") {
+                if (key1) key1.remove();
+                if (key2) key2.remove();
+                if (keyBox) keyBox.remove();
             }
 
             // Hide after 2 seconds
